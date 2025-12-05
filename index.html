@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kanhaiya Kumar – Data Scientist · AI · DevOps Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Kanhaiya Kumar - Data Scientist & Software Engineer specializing in Data Science, GenAI, ML, NLP, DevOps, Azure, and QA."
+  />
+  <style>
+    :root {
+      --bg: #020617;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.12);
+      --accent-strong: rgba(56, 189, 248, 0.2);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --card-bg: rgba(15, 23, 42, 0.96);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #1e293b 0, #020617 45%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+
+    /* Header / Nav */
+
+    header {
+      margin-bottom: 1.75rem;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(
+        to bottom,
+        rgba(15, 23, 42, 0.90),
+        rgba(15, 23, 42, 0.70),
+        rgba(15, 23, 42, 0.0)
+      );
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.4rem 0.1rem 0.7rem;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.9);
+    }
+
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .logo-orb {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: conic-gradient(
+        from 200deg,
+        #22d3ee,
+        #22c55e,
+        #f97316,
+        #a855f7,
+        #22d3ee
+      );
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.7);
+    }
+
+    .site-name {
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      font-size: 0.8rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.94);
+    }
+
+    nav a:hover {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    @media (max-width: 900px) {
+      .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        width: 100%;
+      }
+    }
+
+    /* Layout */
+
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    section {
+      margin-bottom: 0.25rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 1.25rem;
+      padding: 1.25rem 1.25rem 1.3rem;
+      border: 1px solid rgba(51, 65, 85, 0.9);
+      box-shadow: 0 22px 55px rgba(0, 0, 0, 0.75);
+    }
+
+    .card + .card {
+      margin-top: 0.7rem;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.6rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .card h2 {
+      font-size: 1rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .card-label {
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    /* Hero */
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.35), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(124, 58, 237, 0.24), transparent 55%);
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .hero-name {
+      font-size: 2.1rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-title {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-pill {
+      font-size: 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      padding: 0.15rem 0.7rem;
+      background: rgba(15, 23, 42, 0.92);
+    }
+
+    .hero-highlight {
+      margin-top: 0.4rem;
+      padding: 0.75rem 0.8rem;
+      border-radius: 0.9rem;
+      border: 1px solid var(--accent-strong);
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.25), rgba(15, 23, 42, 0.98));
+      font-size: 0.9rem;
+    }
+
+    .hero-highlight strong {
+      color: var(--accent);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.8rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    /* Generic text blocks */
+
+    .about-text p + p {
+      margin-top: 0.55rem;
+    }
+
+    .highlight-block {
+      margin-top: 0.9rem;
+      padding: 0.65rem 0.75rem;
+      border-radius: 0.85rem;
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-strong);
+      font-size: 0.9rem;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .bullet-list {
+      margin-top: 0.45rem;
+      padding-left: 1.1rem;
+      font-size: 0.9rem;
+    }
+
+    .bullet-list li + li {
+      margin-top: 0.25rem;
+    }
+
+    .experience-item + .experience-item,
+    .project-item + .project-item {
+      margin-top: 0.85rem;
+      padding-top: 0.85rem;
+      border-top: 1px dashed rgba(75, 85, 99, 0.7);
+    }
+
+    .exp-title,
+    .project-title {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .exp-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.3rem;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      border-radius: 999px;
+      padding: 0.2rem 0.6rem;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(75, 85, 99, 0.9);
+    }
+
+    .pill-group-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .pill-strong {
+      border-radius: 999px;
+      padding: 0.3rem 0.7rem;
+      font-size: 0.8rem;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+    }
+
+    .pill-strong.highlight {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    .education-item h3 {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .edu-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .small-list {
+      margin-top: 0.35rem;
+      padding-left: 1.1rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .small-list li + li {
+      margin-top: 0.2rem;
+    }
+
+    .contact-list {
+      list-style: none;
+      font-size: 0.9rem;
+    }
+
+    .contact-list li + li {
+      margin-top: 0.35rem;
+    }
+
+    .contact-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      display: block;
+    }
+
+    footer {
+      margin-top: 1.5rem;
+      padding: 1rem 0 0.5rem;
+      border-top: 1px solid rgba(15, 23, 42, 0.9);
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    footer span {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- HEADER -->
+    <header>
+      <div class="top-bar">
+        <div class="logo-title">
+          <div class="logo-orb"></div>
+          <div>
+            <div class="site-name">KANHAIYAKUMAR.IN</div>
+            <div style="font-size:0.75rem;color:var(--muted);margin-top:0.1rem;">
+              Data Science · GenAI · ML · DevOps
+            </div>
+          </div>
+        </div>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#ai-work">AI &amp; GenAI</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="card hero-card" id="top">
+        <div class="hero-inner">
+          <!-- Profile Image -->
+          <img src="profile.jpg" alt="Kanhaiya Kumar"
+            style="
+              width:120px;
+              height:120px;
+              border-radius:50%;
+              object-fit:cover;
+              border:2px solid var(--accent);
+              box-shadow:0 0 30px rgba(56,189,248,0.55);
+            " />
+
+          <!-- Text -->
+          <div style="flex:1; min-width:260px;">
+            <div class="card-header" style="padding:0; margin-bottom:0.6rem;">
+              <h2>Overview</h2>
+              <span class="card-label">Engineering the AI Future</span>
+            </div>
+            <div class="hero-name">Kanhaiya Kumar</div>
+            <div class="hero-title">
+              Data Scientist & Software Engineer &mdash; GenAI · ML · NLP · Azure · DevOps · QA
+            </div>
+
+            <div class="hero-pill-row">
+              <span class="hero-pill">Data Science</span>
+              <span class="hero-pill">Machine Learning</span>
+              <span class="hero-pill">NLP</span>
+              <span class="hero-pill">Generative AI</span>
+              <span class="hero-pill">Python</span>
+            </div>
+
+            <div class="hero-highlight">
+              <strong>Building practical AI systems</strong> &mdash; I design and ship
+              intelligent workflows that transform unstructured documents and data
+              into automated, production-ready pipelines using GenAI, ML, and Azure.
+            </div>
+
+            <div class="hero-meta">
+              <span><span class="dot"></span> Pune, Maharashtra, India</span>
+              <span>From Begusarai, Bihar</span>
+              <span>4+ years in software</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="card" id="about">
+        <div class="card-header">
+          <h2>About</h2>
+          <span class="card-label">Profile</span>
+        </div>
+        <div class="about-text">
+          <p>
+            I’m a <strong>Data Scientist & Software Engineer</strong> at
+            <strong>Xoriant</strong>, working across Data Science, Machine Learning,
+            GenAI, DevOps, and QA. My work focuses on automating data-heavy workflows
+            for engineering and quoting teams &mdash; especially around RFQs, specification
+            logs, and technical documentation.
+          </p>
+          <p>
+            I specialise in <strong>data extraction, content summarisation, and
+            AI-driven automation</strong>, using <strong>Python, OpenAI/GenAI, and
+            Microsoft Azure</strong>. I’ve built and tested pipelines that read PDFs,
+            Word, Excel, and emails, extract structured data, and feed it into quoting
+            and decision systems.
+          </p>
+          <p>
+            With a background spanning <strong>DevOps</strong> and
+            <strong>QA/UAT</strong>, I care deeply about making AI solutions
+            production-ready: stable deployments, repeatable behaviour, and
+            measurable impact.
+          </p>
+          <div class="highlight-block">
+            <strong>Current focus:</strong> growing into a stronger
+            <strong>Data Engineer / Data Scientist</strong> with solid DevOps skills,
+            and using <strong>prompt engineering</strong> to design end-to-end AI
+            systems that solve business problems, not just demos.
+          </div>
+        </div>
+      </section>
+
+      <!-- AI & GenAI WORK -->
+      <section class="card" id="ai-work">
+        <div class="card-header">
+          <h2>AI &amp; GenAI Work</h2>
+          <span class="card-label">Applied Intelligence</span>
+        </div>
+        <p class="muted">
+          A snapshot of how I use Machine Learning, NLP, and Generative AI in
+          production-like workflows.
+        </p>
+        <ul class="bullet-list">
+          <li>
+            Build <strong>data extraction pipelines</strong> that read RFQs, spec logs,
+            and drawings (PDF, Word, Excel, emails) and convert them into structured data
+            using LLMs and rule-based logic.
+          </li>
+          <li>
+            Design <strong>prompt engineering strategies</strong> and keyword maps so AI
+            outputs match what Application Engineers actually need in their quotations.
+          </li>
+          <li>
+            Use <strong>Azure OpenAI / OpenAI</strong> to generate summaries, extract
+            entities, and answer domain-specific questions from complex technical documents.
+          </li>
+          <li>
+            Validate and test AI systems from a <strong>QA/UAT perspective</strong>,
+            ensuring reliability, accuracy, and consistency before rollout.
+          </li>
+          <li>
+            Integrate AI workflows into <strong>DevOps pipelines</strong>, enabling
+            continuous improvement of prompts, models, and rules.
+          </li>
+        </ul>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section class="card" id="experience">
+        <div class="card-header">
+          <h2>Experience</h2>
+          <span class="card-label">Career Journey</span>
+        </div>
+
+        <div class="experience-item">
+          <div class="exp-title">Software Engineer / Data Scientist &mdash; Xoriant</div>
+          <div class="exp-meta">
+            Sep 2022 &ndash; Present &middot; Pune, Maharashtra, India
+          </div>
+          <p class="muted">
+            Software Engineer specialising in Data Science, GenAI, Machine Learning,
+            AI-driven solutions, and DevOps. Hands-on with Python, OpenAI/GenAI, Azure,
+            QA, and automation.
+          </p>
+          <ul class="bullet-list">
+            <li>
+              Designed and implemented AI-driven workflows for document processing,
+              including data extraction, summarisation, and validation.
+            </li>
+            <li>
+              Built Python-based pipelines integrating Azure Blob, file conversion, and
+              Azure OpenAI for entity extraction and summarisation.
+            </li>
+            <li>
+              Collaborated with Application Engineers to ensure extracted data and summaries
+              match real quoting and engineering requirements.
+            </li>
+            <li>
+              Contributed to DevOps and deployment tasks, including CI/CD pipelines and
+              environment configuration on Azure.
+            </li>
+            <li>
+              Performed UAT and QA on AI tools, identifying edge cases and improving model
+              behaviour and prompts over time.
+            </li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <div class="exp-title">Associate Software Engineer &mdash; Xoriant</div>
+          <div class="exp-meta">
+            Aug 2021 &ndash; Sep 2022 &middot; Pune, Maharashtra, India
+          </div>
+          <p class="muted">
+            Early-career engineering role focused on build optimisation, cloud, and
+            DevOps, with exposure to secure and scalable systems.
+          </p>
+          <ul class="bullet-list">
+            <li>
+              Worked with build tools like <strong>BuildGrid, RECC, and Bazel</strong>
+              to improve build performance and scalability.
+            </li>
+            <li>
+              Streamlined build pipelines, reducing development time and increasing
+              productivity for engineering teams.
+            </li>
+            <li>
+              Supported Azure and cloud-related work, contributing to stable and
+              efficient deployments.
+            </li>
+            <li>
+              Focused on continuous improvement and automation across the build and
+              release process.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section class="card" id="skills">
+        <div class="card-header">
+          <h2>Skills</h2>
+          <span class="card-label">Stack &amp; Strengths</span>
+        </div>
+
+        <div style="margin-bottom:0.7rem;">
+          <div class="pill-group-label">Core</div>
+          <div class="skills-grid">
+            <span class="pill-strong highlight">Data Science</span>
+            <span class="pill-strong highlight">Python</span>
+            <span class="pill-strong">Machine Learning</span>
+            <span class="pill-strong">GenAI / LLMs</span>
+            <span class="pill-strong">NLP</span>
+            <span class="pill-strong">Prompt Engineering</span>
+            <span class="pill-strong">DevOps</span>
+            <span class="pill-strong">Microsoft Azure</span>
+            <span class="pill-strong">QA &amp; UAT</span>
+          </div>
+        </div>
+
+        <div style="margin-bottom:0.7rem;">
+          <div class="pill-group-label">Tools &amp; Platforms</div>
+          <div class="skills-grid">
+            <span class="pill-strong">Azure OpenAI</span>
+            <span class="pill-strong">Azure Blob</span>
+            <span class="pill-strong">Azure DevOps</span>
+            <span class="pill-strong">Git</span>
+            <span class="pill-strong">Red Hat Enterprise Linux (RHEL)</span>
+            <span class="pill-strong">BuildGrid</span>
+            <span class="pill-strong">RECC</span>
+            <span class="pill-strong">Bazel</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="pill-group-label">Soft Skills</div>
+          <div class="skills-grid">
+            <span class="pill-strong">Problem-Solving</span>
+            <span class="pill-strong">Workflow Automation</span>
+            <span class="pill-strong">Collaboration with AEs</span>
+            <span class="pill-strong">Continuous Improvement</span>
+            <span class="pill-strong">Attention to Detail</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="card" id="projects">
+        <div class="card-header">
+          <h2>Projects</h2>
+          <span class="card-label">Selected Work</span>
+        </div>
+
+        <div class="project-item">
+          <div class="project-title">Automated Data Extraction for Seal Quote Generation</div>
+          <div class="exp-meta">Python · OpenAI/GenAI · Azure · Automation</div>
+          <p>
+            End-to-end pipeline to extract data from RFQs and related documents
+            (PDF, Word, Excel, emails) and generate structured Excel-based Seal Quotes.
+          </p>
+          <ul class="bullet-list">
+            <li>
+              Organised input files by opportunity, extracted key technical and commercial
+              fields, and validated outputs.
+            </li>
+            <li>
+              Reduced manual work for Application Engineers and improved consistency
+              of quotations.
+            </li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">RFQ Automation</span>
+            <span class="tag">Document AI</span>
+            <span class="tag">Azure Blob</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-title">Automated Data Extraction from Specification Logs</div>
+          <div class="exp-meta">Python · Data Validation · Workflow Automation</div>
+          <p>
+            Automated extraction and validation of fields from specification log files,
+            exporting clean data for downstream use.
+          </p>
+          <ul class="bullet-list">
+            <li>
+              Built rules and checks to maintain high data quality.
+            </li>
+            <li>
+              Supported accurate and efficient quote preparation and analysis.
+            </li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">Spec Logs</span>
+            <span class="tag">Data Quality</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-title">Spec-Extract – Content Extraction &amp; Summarisation</div>
+          <div class="exp-meta">GenAI · NLP · Prompt Engineering</div>
+          <p>
+            System to extract and summarise relevant sections from specification logs
+            using keyword mapping + Generative AI.
+          </p>
+          <ul class="bullet-list">
+            <li>
+              Designed keyword maps and prompts to focus on voltage, pressures, materials,
+              and other key attributes.
+            </li>
+            <li>
+              Enhanced summarisation quality using GenAI / OpenAI to align with
+              how AEs think and search.
+            </li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">Summarisation</span>
+            <span class="tag">Keyword Mapping</span>
+            <span class="tag">Prompt Engineering</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section class="card" id="education">
+        <div class="card-header">
+          <h2>Education</h2>
+          <span class="card-label">Academic</span>
+        </div>
+        <div class="education-item">
+          <h3>Orissa Engineering College</h3>
+          <div class="edu-meta">
+            B.Tech &mdash; Computer Science &middot; Aug 2017 &ndash; Jun 2021
+          </div>
+          <div class="muted">CGPA: 8.65</div>
+          <ul class="small-list">
+            <li>
+              Built strong foundations in computer science, programming,
+              and software engineering.
+            </li>
+            <li>
+              Active in college activities and societies, fostering a sense
+              of community and collaboration.
+            </li>
+            <li>
+              Explored photography through the media club and stayed updated
+              with technology trends.
+            </li>
+            <li>
+              Developed critical thinking, problem-solving, and time management
+              skills with a global perspective.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CERTIFICATIONS / GOALS -->
+      <section class="card">
+        <div class="card-header">
+          <h2>Certifications &amp; Goals</h2>
+          <span class="card-label">Growth</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Microsoft Certified: Azure Administrator Associate.</li>
+          <li>Multiple Udemy certifications across Python, data, and cloud / DevOps.</li>
+        </ul>
+        <div class="highlight-block" style="margin-top:0.8rem;">
+          I’m looking for roles where I can combine
+          <strong>Data Engineering / Data Science</strong>,
+          <strong>GenAI</strong>, and <strong>DevOps</strong> to build
+          end-to-end AI systems that have a clear real-world impact.
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="card" id="contact">
+        <div class="card-header">
+          <h2>Contact</h2>
+          <span class="card-label">Let’s Connect</span>
+        </div>
+        <ul class="contact-list">
+          <li>
+            <span class="contact-label">Email</span>
+            <!-- TODO: replace with your real email -->
+            <a href="mailto:youremail@example.com">youremail@example.com</a>
+          </li>
+          <li>
+            <span class="contact-label">LinkedIn</span>
+            <!-- TODO: replace with your actual LinkedIn URL -->
+            <a href="https://www.linkedin.com/in/your-linkedin/"
+              target="_blank" rel="noreferrer">
+              linkedin.com/in/your-linkedin
+            </a>
+          </li>
+          <li>
+            <span class="contact-label">GitHub</span>
+            <!-- TODO: replace with your actual GitHub URL -->
+            <a href="https://github.com/your-github" target="_blank" rel="noreferrer">
+              github.com/your-github
+            </a>
+          </li>
+          <li>
+            <span class="contact-label">Location</span>
+            Pune, Maharashtra, India &middot; From Begusarai, Bihar
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Kanhaiya Kumar · kanhaiyakumar.in ·
+      Built with HTML &amp; CSS · Hosted on Azure
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
